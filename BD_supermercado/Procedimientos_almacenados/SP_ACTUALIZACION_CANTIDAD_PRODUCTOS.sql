@@ -1,0 +1,26 @@
+USE [SUPERMERCADO]
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		JHON CAICEDO
+-- Create date: 17/12/2019
+-- Description: ACTUALIZA LA CANTIDAD DE PRODUCTOS DISPONIBLE
+-- =============================================
+CREATE PROCEDURE SP_ACTUALIZACION_CANTIDAD_PRODUCTOS
+	@ID_PRODUCTO INT, 
+	@CANTIDAD INT = 0
+AS
+BEGIN
+	
+	UPDATE [SUPERMERCADO].[dbo].[PRODUCTO]
+	SET
+		[SUPERMERCADO].[dbo].[PRODUCTO].[CANTIDAD_PRODUCTO] =
+			([SUPERMERCADO].[dbo].[PRODUCTO].[CANTIDAD_PRODUCTO] - @CANTIDAD)
+	WHERE 
+		[SUPERMERCADO].[dbo].[PRODUCTO].[ID_PRODUCTO] = @ID_PRODUCTO
+		
+END
+GO

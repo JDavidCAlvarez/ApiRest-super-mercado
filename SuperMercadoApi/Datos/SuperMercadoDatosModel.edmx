@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SuperMercadoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="ID_PERSONA_CLIENTE" Type="int" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+          <Property Name="FECHA_FACTURA" Type="date" />
+          <Property Name="ID_CLIENTE_FACTURA" Type="int" />
+          <Property Name="ID_EMPLEADO_FACTURA" Type="int" />
+        </EntityType>
+        <EntityType Name="FACTURA_PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+          <Property Name="CANTIDAD_PRODUCTO" Type="int" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="int" Nullable="false" />
+          <Property Name="PRIMER_NOMBRE_PERSONA" Type="varchar" MaxLength="20" />
+          <Property Name="SEGUNDO_NOMBRE_PERSONA" Type="varchar" MaxLength="20" />
+          <Property Name="PRIMER_APELLIDO_PERSONA" Type="varchar" MaxLength="20" />
+          <Property Name="SEGUNDO_APELLIDO_PERSONA" Type="varchar" MaxLength="20" />
+          <Property Name="NUMERO_IDENTIDAD_PERSONA" Type="varchar" MaxLength="20" />
+          <Property Name="DIRECCION_RESIDENCIA_PERSONA" Type="text" />
+          <Property Name="CORREO_ELECTRONICO_PERSONA" Type="text" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_PRODUCTO" Type="varchar" MaxLength="30" />
+          <Property Name="VALOR_VENTA_PRODUCTO" Type="float" />
+          <Property Name="CANTIDAD_PRODUCTO" Type="int" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CONTRASENA_USUARIO" Type="varbinary" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuperMercadoModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FACTURA_PRODUCTO" EntityType="Self.FACTURA_PRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SuperMercadoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="ID_PERSONA_CLIENTE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_FACTURA" Type="DateTime" Precision="0" />
+          <Property Name="ID_CLIENTE_FACTURA" Type="Int32" />
+          <Property Name="ID_EMPLEADO_FACTURA" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FACTURA_PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="CANTIDAD_PRODUCTO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+          <Property Name="PRIMER_NOMBRE_PERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SEGUNDO_NOMBRE_PERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PRIMER_APELLIDO_PERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SEGUNDO_APELLIDO_PERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NUMERO_IDENTIDAD_PERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_RESIDENCIA_PERSONA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CORREO_ELECTRONICO_PERSONA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR_VENTA_PRODUCTO" Type="Double" />
+          <Property Name="CANTIDAD_PRODUCTO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CONTRASENA_USUARIO" Type="Binary" MaxLength="100" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuperMercadoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTEs" EntityType="Self.CLIENTE" />
+          <EntitySet Name="FACTURAs" EntityType="Self.FACTURA" />
+          <EntitySet Name="FACTURA_PRODUCTO" EntityType="Self.FACTURA_PRODUCTO" />
+          <EntitySet Name="PERSONAs" EntityType="Self.PERSONA" />
+          <EntitySet Name="PRODUCTOes" EntityType="Self.PRODUCTO" />
+          <EntitySet Name="USUARIOs" EntityType="Self.USUARIO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SuperMercadoModelStoreContainer" CdmEntityContainer="SuperMercadoEntities">
+          <EntitySetMapping Name="CLIENTEs">
+            <EntityTypeMapping TypeName="SuperMercadoModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="ID_PERSONA_CLIENTE" ColumnName="ID_PERSONA_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURAs">
+            <EntityTypeMapping TypeName="SuperMercadoModel.FACTURA">
+              <MappingFragment StoreEntitySet="FACTURA">
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+                <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+                <ScalarProperty Name="ID_CLIENTE_FACTURA" ColumnName="ID_CLIENTE_FACTURA" />
+                <ScalarProperty Name="ID_EMPLEADO_FACTURA" ColumnName="ID_EMPLEADO_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURA_PRODUCTO">
+            <EntityTypeMapping TypeName="SuperMercadoModel.FACTURA_PRODUCTO">
+              <MappingFragment StoreEntitySet="FACTURA_PRODUCTO">
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="CANTIDAD_PRODUCTO" ColumnName="CANTIDAD_PRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONAs">
+            <EntityTypeMapping TypeName="SuperMercadoModel.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="PRIMER_NOMBRE_PERSONA" ColumnName="PRIMER_NOMBRE_PERSONA" />
+                <ScalarProperty Name="SEGUNDO_NOMBRE_PERSONA" ColumnName="SEGUNDO_NOMBRE_PERSONA" />
+                <ScalarProperty Name="PRIMER_APELLIDO_PERSONA" ColumnName="PRIMER_APELLIDO_PERSONA" />
+                <ScalarProperty Name="SEGUNDO_APELLIDO_PERSONA" ColumnName="SEGUNDO_APELLIDO_PERSONA" />
+                <ScalarProperty Name="NUMERO_IDENTIDAD_PERSONA" ColumnName="NUMERO_IDENTIDAD_PERSONA" />
+                <ScalarProperty Name="DIRECCION_RESIDENCIA_PERSONA" ColumnName="DIRECCION_RESIDENCIA_PERSONA" />
+                <ScalarProperty Name="CORREO_ELECTRONICO_PERSONA" ColumnName="CORREO_ELECTRONICO_PERSONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOes">
+            <EntityTypeMapping TypeName="SuperMercadoModel.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
+                <ScalarProperty Name="VALOR_VENTA_PRODUCTO" ColumnName="VALOR_VENTA_PRODUCTO" />
+                <ScalarProperty Name="CANTIDAD_PRODUCTO" ColumnName="CANTIDAD_PRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOs">
+            <EntityTypeMapping TypeName="SuperMercadoModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+                <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+                <ScalarProperty Name="CONTRASENA_USUARIO" ColumnName="CONTRASENA_USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

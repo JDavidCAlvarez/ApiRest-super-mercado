@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMercadoApi", "SuperMercadoApi\SuperMercadoApi.csproj", "{8D639D8D-B5EB-4DDE-AC73-BDC6FD2101A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{76B35B9B-8104-424F-A860-EC35F24BAF05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D639D8D-B5EB-4DDE-AC73-BDC6FD2101A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D639D8D-B5EB-4DDE-AC73-BDC6FD2101A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D639D8D-B5EB-4DDE-AC73-BDC6FD2101A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D639D8D-B5EB-4DDE-AC73-BDC6FD2101A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B35B9B-8104-424F-A860-EC35F24BAF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B35B9B-8104-424F-A860-EC35F24BAF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B35B9B-8104-424F-A860-EC35F24BAF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B35B9B-8104-424F-A860-EC35F24BAF05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B3DD927-7CEA-4F06-9CCA-B470F17C14E8}
+	EndGlobalSection
+EndGlobal
